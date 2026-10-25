@@ -1,0 +1,8 @@
+generated: "2026-10-25"
+method: derived
+source: "derived from lack of MCP server"
+type: MCPServer
+deployment:
+  mode: none
+  auth: unknown
+  verified: derived

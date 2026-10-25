@@ -1,0 +1,472 @@
+openapi: 3.1.0
+info:
+  title: EdgeDB API
+  version: '2026-10-25'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-25: 18 operation(s) read from 8 public documentation page(s) (each operation
+    names its page in x-source). This is not the provider''s published contract; EdgeDB has published no machine-readable contract that the pipeline
+    could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 17
+    documentation: 1
+    pages-with-code: 8
+    pages-read: 8
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-25'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://docs.geldata.com/learn/tutorials/ai_fastapi_searchbot
+  - https://docs.geldata.com/learn/quickstart/ai
+  - https://docs.geldata.com/learn/tutorials/gel_drizzle_booknotes
+  - https://docs.geldata.com/learn/cli
+  - https://docs.geldata.com/reference/using/cli
+  - https://docs.geldata.com/reference/using/cli/network
+  - https://docs.geldata.com/reference/using/graphql
+  - https://docs.geldata.com/reference/running/deployment/bare_metal
+paths:
+  /:
+    get:
+      operationId: get
+      tags:
+      - Api
+      summary: GET /
+      x-source: https://docs.geldata.com/learn/tutorials/ai_fastapi_searchbot
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X 'GET'  'http://127.0.0.1:8000/'  -H 'accept: application/json' \n{\"message\":\"Hello World\"} \n Now, to create the\
+          \ search endpoint we mentioned earlier, we need to pass our\n query as a parameter to it. We'd prefer to have it in the request's body\n\
+          \ since user messages can be long. In FastAPI land, this is done by creating a Pydantic schema and making it the\n type of the input\
+          \ parameter. Pydanti"
+  /api:
+    get:
+      operationId: get_api
+      tags:
+      - Api
+      summary: GET /api
+      x-source: https://docs.geldata.com/learn/tutorials/gel_drizzle_booknotes
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl. Let's start the\n development server and test the routes. Copy $ npm run dev \n You can now access the API routes at http://localhost:3000/api\
+          \ (or the port specified in your environment). For example, to access the books route, you can go to http://localhost:3000/api/books\
+          \ . You can use Postman or cURL to test the endpoints. For example, to fetch all books, you can use the following cURL comma"
+  /api/books:
+    get:
+      operationId: get_api_books
+      tags:
+      - Api
+      summary: The GET method will return a list of all books.
+      x-source: https://docs.geldata.com/learn/tutorials/gel_drizzle_booknotes
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    post:
+      operationId: post_api_books
+      tags:
+      - Api
+      summary: POST /api/books
+      x-source: https://docs.geldata.com/learn/tutorials/gel_drizzle_booknotes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostApiBooksRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X POST http://localhost:3000/api/books  -H \"Content-Type: application/json\"  -d '{\"title\": \"The Great Gatsby\", \"\
+          author\": \"F. Scott Fitzgerald\", \"year\": 1925, \"genre\": \"Fiction\", \"read_date\": \"2023-10-01\"}' \n Or to create a new note\
+          \ for a book, you can use the following cURL command\n (replace <BOOK_ID> with the actual book ID): Copy $ "
+  /archive/.jsonindexes/linux-x86_64.json:
+    get:
+      operationId: get_archive_jsonindexes_linux_x86_64_json
+      tags:
+      - Archive
+      summary: GET /archive/.jsonindexes/linux-x86_64.json
+      x-source: https://docs.geldata.com/reference/using/cli/network
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: http
+        snippet: " GET /archive/.jsonindexes/linux-x86_64.json HTTP/1.1\nhost: packages.geldata.com\ncontent-length: 0\nuser-agent: gel \n The\
+          \ User-Agent header only specifies that request is done by\n gel command-line tool (without version number). The platform,\n architecture\
+          \ and whether nightly is used can be devised from the URL of\n the query. \n Latest version number is cached for the random duration\
+          \ from 16 to 32\n h"
+  /branch/main/graphql:
+    get:
+      operationId: get_branch_main_graphql
+      tags:
+      - Branch
+      summary: GET /branch/main/graphql
+      x-source: https://docs.geldata.com/reference/using/graphql
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetBranchMainGraphqlResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl  -H application/x-www-form-urlencoded  -X GET http://localhost:10787/branch/main/graphql  -G  --data-urlencode 'query=query\
+          \ getMovie($title: String!) { Movie(filter: {title:{eq: $title}}) { id title }}'  --data-urlencode 'variables={ \"title\": \"The Batman\"\
+          \ }' --data-urlencode 'globals={ \"default::current_user\": \"04e52807-6835-4eaa-999b-952804ab40a5\" }'\n{\"data\": {...}} \n Response\
+          \ format ​ \n The"
+    post:
+      operationId: post_branch_main_graphql
+      tags:
+      - Branch
+      summary: POST /branch/main/graphql
+      x-source: https://docs.geldata.com/reference/using/graphql
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostBranchMainGraphqlRequest'
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostBranchMainGraphqlResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl  -H \"Content-Type: application/json\"  -X POST http://localhost:10787/branch/main/graphql  -d '{ \"query\": \"query getMovie($title:\
+          \ String!) { Movie(filter: {title:{eq: $title}}) { id title }}\", \"variables\": { \"title\": \"The Batman\" , \"__globals__\": {\"\
+          default::current_user\": \"04e52807-6835-4eaa-999b-952804ab40a5\"}}}' {\"data\": {...}} \n GET request ​ \n When using GET requests,\
+          \ any values for query "
+  /chats:
+    post:
+      operationId: post_chats
+      tags:
+      - Chats
+      summary: POST /chats
+      x-source: https://docs.geldata.com/learn/tutorials/ai_fastapi_searchbot
+      parameters:
+      - name: username
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X 'POST'  'http://127.0.0.1:8000/chats?username=charlie'  -H 'accept: application/json'  -d '' \n{\n \"id\": \"20372a1a-ded5-11ef-9a08-b329b578c45c\"\
+          ,\n \"new_chat_id\": \"544ef3f2-ded8-11ef-ba16-f7f254b95e36\"\n} \n Next, let's add a couple messages and wait for the bot to respond:\
+          \ Copy $ "
+  /fetch_rag:
+    get:
+      operationId: get_fetch_rag
+      tags:
+      - Fetch Rag
+      summary: GET /fetch_rag
+      x-source: https://docs.geldata.com/learn/quickstart/ai
+      parameters:
+      - name: query
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X 'GET'  'http://localhost:8000/fetch_rag?query=what%20cheese%20smells%20like%20feet'  -H 'accept: application/json' \n\
+          \ Congratulations! We've now implemented AI features in our flashcards app.\n Of course, there's more to learn when it comes to using\
+          \ the AI extension.\n Make sure to check out the Reference manual , or build an LLM-powered search bot from the\n ground up with the\
+          \ FastAPI Gel AI "
+  /fetch_similar:
+    get:
+      operationId: get_fetch_similar
+      tags:
+      - Fetch Similar
+      summary: GET /fetch_similar
+      x-source: https://docs.geldata.com/learn/quickstart/ai
+      parameters:
+      - name: query
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X 'GET'  'http://localhost:8000/fetch_similar?query=the%20stinkiest%20cheese'  -H 'accept: application/json' \n Finally,\
+          \ let's create the second endpoint we mentioned, called\n /fetch_rag . We'll be able to use this one to, for example, ask an LLM\n to\
+          \ quiz us on the contents of our deck. The RAG feature is represented in the Python binding with the query_rag \n method of the GelRAG\
+          \ class. To us"
+  /keys/gel-keyring.gpg:
+    get:
+      operationId: get_keys_gel_keyring_gpg
+      tags:
+      - Keys
+      summary: GET /keys/gel-keyring.gpg
+      x-source: https://docs.geldata.com/reference/running/deployment/bare_metal
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --proto '=https' --tlsv1.2 -sSf  -o /usr/local/share/keyrings/gel-keyring.gpg  https://packages.geldata.com/keys/gel-keyring.gpg\
+          \ \n Add the Gel package repository. \n Copy $ \n echo deb '[signed-by=/usr/local/share/keyrings/gel-keyring.gpg]'  https://packages.geldata.com/apt\
+          \  $( grep \"VERSION_CODENAME=\" /etc/os-release | cut -d = -f2 ) main  | sudo tee /etc/apt/sources.list.d/gel.list \n For non-"
+  /messages:
+    get:
+      operationId: get_messages
+      tags:
+      - Messages
+      summary: GET /messages
+      x-source: https://docs.geldata.com/learn/tutorials/ai_fastapi_searchbot
+      parameters:
+      - name: chat_id
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: username
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X 'GET'  'http://127.0.0.1:8000/messages?username=charlie&chat_id=544ef3f2-ded8-11ef-ba16-f7f254b95e36'  -H 'accept: application/json'\
+          \ \n In reality this workflow would've been handled by the frontend, providing the\n user with a nice inteface to interact with. But\
+          \ even without one our chatbot is\n almost functional by now. \n Generating a Google search query ​ \n Congratulations! We just got\
+          \ don"
+    post:
+      operationId: post_messages
+      tags:
+      - Messages
+      summary: POST /messages
+      x-source: https://docs.geldata.com/learn/tutorials/ai_fastapi_searchbot
+      parameters:
+      - name: chat_id
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: username
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X 'POST'  'http://127.0.0.1:8000/messages?username=charlie&chat_id=544ef3f2-ded8-11ef-ba16-f7f254b95e36'  -H 'accept:\
+          \ application/json'  -H 'Content-Type: application/json'  -d ' { \"query\": \"best database in existence\"\n}'\n Copy $ "
+  /search:
+    post:
+      operationId: post_search
+      tags:
+      - Search
+      summary: POST /search
+      x-source: https://docs.geldata.com/learn/tutorials/ai_fastapi_searchbot
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostSearchRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X 'POST'  'http://127.0.0.1:8000/search'  -H 'accept: application/json'  -H 'Content-Type: application/json'  -d '{ \"\
+          query\": \"string\" }' \n {\n \"response\": \"string\",\n } \n 3. Implement web search ​ \n Now that we have our web app infrastructure\
+          \ in place, let's add some substance\n to it by implementing web search capabilities. \n There're many powerful feature-rich products\
+          \ for LLM-driven web sear"
+  /sh:
+    get:
+      operationId: get_sh
+      tags:
+      - Sh
+      summary: GET /sh
+      x-source: https://docs.geldata.com/learn/cli
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl --proto '=https' --tlsv1.2 -sSf https://www.geldata.com/sh | sh \n Windows Powershell \n Gel on Windows requires WSL 2\
+          \ because the Gel server runs on Linux. \n Copy PS> iwr https: / / www . geldata . com/ps1 - useb | iex \n Follow the prompts on screen\
+          \ to complete the installation. The script will\n download the gel command built for your OS and add a path to it to your\n shell environment.\
+          \ Then te"
+  /users:
+    get:
+      operationId: get_users
+      tags:
+      - Users
+      summary: GET /users
+      x-source: https://docs.geldata.com/learn/tutorials/ai_fastapi_searchbot
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X 'GET'  'http://127.0.0.1:8000/users'  -H 'accept: application/json' \n[\n {\n \"id\": \"862de904-de39-11ef-9713-4fab09220c4a\"\
+          ,\n \"name\": \"alice\"\n },\n {\n \"id\": \"862e400c-de39-11ef-9713-2f81f2b67013\",\n \"name\": \"bob\"\n }\n] \n While we're at it,\
+          \ let's also implement the option to fetch a user by their\n username. In order to do that, we need to write a new query in a separate\
+          \ file\n app/queries/get_user_"
+    post:
+      operationId: post_users
+      tags:
+      - Users
+      summary: POST /users
+      x-source: https://docs.geldata.com/learn/tutorials/ai_fastapi_searchbot
+      parameters:
+      - name: username
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X 'POST'  'http://127.0.0.1:8000/users?username=charlie'  -H 'accept: application/json'  -d '' \n{\n \"id\": \"20372a1a-ded5-11ef-9a08-b329b578c45c\"\
+          ,\n \"name\": \"charlie\"\n} \n This wraps things up for our user-related functionality. Of course, we now need\n to deal with Chats\
+          \ and Messages, too. We're not going to go in depth for those,\n since the process would be quite similar to what we've just done"
+  /uv/install.sh:
+    get:
+      operationId: get_uv_install_sh
+      tags:
+      - Uv
+      summary: GET /uv/install.sh
+      x-source: https://docs.geldata.com/learn/tutorials/ai_fastapi_searchbot
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetUvInstallShResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -LsSf https://astral.sh/uv/install.sh | sh \n Once that is done, we can use uv to create scaffolding for our project following\n\
+          \ the documentation : Copy $ \n uv init searchbot  && cd searchbot \n For now, we know we're going to need Gel and FastAPI, so let's\
+          \ add those\n following uv's instructions on managing dependencies ,\n as well as FastAPI's installation docs . Running uv sync after\n\
+          \ that wil"
+components:
+  schemas:
+    PostApiBooksRequest:
+      type: object
+      properties:
+        title:
+          type: string
+        author:
+          type: string
+        year:
+          type: integer
+        genre:
+          type: string
+        read_date:
+          type: string
+          format: date
+    GetBranchMainGraphqlResponse:
+      type: object
+      properties:
+        data:
+          type: object
+        errors:
+          type: array
+          items:
+            type: object
+            properties:
+              message:
+                type: string
+    PostBranchMainGraphqlRequest:
+      type: object
+      properties:
+        query:
+          type: string
+        variables:
+          type: object
+          properties:
+            title:
+              type: string
+            __globals__:
+              type: object
+              properties:
+                default::current_user:
+                  type: string
+    PostBranchMainGraphqlResponse:
+      type: object
+      properties:
+        data:
+          type: object
+        errors:
+          type: array
+          items:
+            type: object
+            properties:
+              message:
+                type: string
+    PostSearchRequest:
+      type: object
+      properties:
+        query:
+          type: string
+    GetUvInstallShResponse:
+      type: object
+      properties:
+        message:
+          type: string
+tags:
+- name: Api
+- name: Archive
+- name: Branch
+- name: Chats
+- name: Fetch Rag
+- name: Fetch Similar
+- name: Keys
+- name: Messages
+- name: Search
+- name: Sh
+- name: Users
+- name: Uv

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/edgedb-com/main/json-schema/edgedb-com-post-branch-main-graphql-response-schema.json",
+  "title": "PostBranchMainGraphqlResponse",
+  "x-generated": "2026-10-25",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/edgedb-com-openapi-generated.yml#/components/schemas/PostBranchMainGraphqlResponse",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "object"
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

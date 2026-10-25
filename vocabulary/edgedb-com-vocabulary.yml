@@ -1,0 +1,100 @@
+generated: '2026-10-25'
+method: derived
+generator: derive-vocabulary.py
+source: openapi/_ae-authored/edgedb-com-openapi-generated.yml
+vocabulary:
+  name: EdgeDB Domain Vocabulary
+  description: 'Terms declared by EdgeDB''s own API contract: its resource groups, objects and enumerations, with the contract''s definitions.
+    Derived, not authored.'
+  version: '2026-10-25'
+  terms:
+  - term: PostApiBooksRequest
+    definition: 'Object declared by the contract with fields: title, author, year, genre, read_date.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/edgedb-com-openapi-generated.yml#/components/schemas/PostApiBooksRequest
+  - term: GetBranchMainGraphqlResponse
+    definition: 'Object declared by the contract with fields: data, errors.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/edgedb-com-openapi-generated.yml#/components/schemas/GetBranchMainGraphqlResponse
+  - term: PostBranchMainGraphqlRequest
+    definition: 'Object declared by the contract with fields: query, variables.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/edgedb-com-openapi-generated.yml#/components/schemas/PostBranchMainGraphqlRequest
+  - term: PostBranchMainGraphqlResponse
+    definition: 'Object declared by the contract with fields: data, errors.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/edgedb-com-openapi-generated.yml#/components/schemas/PostBranchMainGraphqlResponse
+  - term: PostSearchRequest
+    definition: 'Object declared by the contract with fields: query.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/edgedb-com-openapi-generated.yml#/components/schemas/PostSearchRequest
+  - term: GetUvInstallShResponse
+    definition: 'Object declared by the contract with fields: message.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/edgedb-com-openapi-generated.yml#/components/schemas/GetUvInstallShResponse
+  - term: Api
+    definition: 'Resource group in the contract; its operation GET /: GET /'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/edgedb-com-openapi-generated.yml
+  - term: Archive
+    definition: 'Resource group in the contract; its operation GET /archive/.jsonindexes/linux-x86_64.json: GET /archive/.jsonindexes/linux-x86_64.json'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/edgedb-com-openapi-generated.yml
+  - term: Branch
+    definition: 'Resource group in the contract; its operation GET /branch/main/graphql: GET /branch/main/graphql'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/edgedb-com-openapi-generated.yml
+  - term: Chats
+    definition: 'Resource group in the contract; its operation POST /chats: POST /chats'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/edgedb-com-openapi-generated.yml
+  - term: Fetch Rag
+    definition: 'Resource group in the contract; its operation GET /fetch_rag: GET /fetch_rag'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/edgedb-com-openapi-generated.yml
+  - term: Fetch Similar
+    definition: 'Resource group in the contract; its operation GET /fetch_similar: GET /fetch_similar'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/edgedb-com-openapi-generated.yml
+  - term: Keys
+    definition: 'Resource group in the contract; its operation GET /keys/gel-keyring.gpg: GET /keys/gel-keyring.gpg'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/edgedb-com-openapi-generated.yml
+  - term: Messages
+    definition: 'Resource group in the contract; its operation GET /messages: GET /messages'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/edgedb-com-openapi-generated.yml
+  - term: Search
+    definition: 'Resource group in the contract; its operation POST /search: POST /search'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/edgedb-com-openapi-generated.yml
+  - term: Sh
+    definition: 'Resource group in the contract; its operation GET /sh: GET /sh'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/edgedb-com-openapi-generated.yml
+  - term: Users
+    definition: 'Resource group in the contract; its operation GET /users: GET /users'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/edgedb-com-openapi-generated.yml
+  - term: Uv
+    definition: 'Resource group in the contract; its operation GET /uv/install.sh: GET /uv/install.sh'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/edgedb-com-openapi-generated.yml

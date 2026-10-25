@@ -1,0 +1,103 @@
+generated: '2026-10-25'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 7
+  own: 3
+  other_domain: 3
+  platform: 1
+  roles:
+  - api
+  - docs
+  - marketing
+  - source
+  - website
+hosts:
+- host: api.edgedb.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: edgedb.com
+  role: api
+  relation: own
+- host: api.geldata.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: geldata.com
+  role: api
+  relation: other-domain
+- host: docs.edgedb.com
+  found_by:
+  - pointer
+  - probed
+  - site-links
+  - namespace-probe
+  - contract-discovery
+  - well-known
+  types:
+  - Documentation
+  serves: []
+  title: Overview | Learn | Gel Docs
+  status: 200
+  registrable_domain: edgedb.com
+  role: docs
+  relation: own
+- host: docs.geldata.com
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - site-links
+  - docs-index
+  - well-known
+  types:
+  - GettingStarted
+  serves:
+  - docs
+  registrable_domain: geldata.com
+  role: docs
+  relation: other-domain
+- host: github.com
+  found_by:
+  - pointer
+  types:
+  - GitHubOrganization
+  serves: []
+  registrable_domain: github.com
+  role: source
+  relation: platform
+- host: www.edgedb.com
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - Website
+  serves:
+  - hosting
+  vendor: vercel
+  registrable_domain: edgedb.com
+  role: website
+  relation: own
+- host: www.geldata.com
+  found_by:
+  - pointer
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types:
+  - TermsOfService
+  - PrivacyPolicy
+  - Pricing
+  - Blog
+  serves: []
+  registrable_domain: geldata.com
+  role: marketing
+  relation: other-domain
